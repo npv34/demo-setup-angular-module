@@ -3,7 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 
 const routes: Routes = [
-  { path: 'users', loadChildren:'./users/users.module#UsersModule'}
+  { path: 'users', loadChildren: () => import('./users/users.module').then(m => m.UsersModule)}
 ];
 
 @NgModule({
